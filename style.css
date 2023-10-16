@@ -23,14 +23,11 @@ header {
 /* Navigation styles */
 nav ul {
     list-style-type: none;
-    display: flex;
-    flex-direction: column; /* Arrange the links vertically */
-    align-items: center;
-    margin-top: 20px;
 }
 
 nav ul li {
-    margin: 10px 0;
+    display: inline;
+    margin: 0 10px;
 }
 
 nav a {
