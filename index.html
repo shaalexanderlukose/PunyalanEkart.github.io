@@ -18,14 +18,46 @@
             <h2>Product 1</h2>
             <p>Product description goes here.</p>
             <p>Price: $19.99</p>
-            <button>Add to Cart</button>
+            <button id="addToCart">Add to Cart</button>
         </div>
-
-        <!-- Add more products in a similar format -->
     </main>
     
+    <div id="cartStatus" class="hidden">
+        <div class="processing-animation"></div>
+        <p>Order processing...</p>
+    </div>
+
+    <div id="successMessage" class="hidden">
+        <p>Order successful!</p>
+    </div>
+
     <footer>
         &copy; 2023 Punyalan Private Limited
     </footer>
+
+    <script>
+        const addToCartButton = document.getElementById('addToCart');
+        const cartStatus = document.getElementById('cartStatus');
+        const successMessage = document.getElementById('successMessage');
+
+        addToCartButton.addEventListener('click', () => {
+            // Show processing animation
+            cartStatus.classList.remove('hidden');
+
+            // Simulate a delay to mimic order processing (you can replace this with actual processing logic)
+            setTimeout(() => {
+                // Hide processing animation
+                cartStatus.classList.add('hidden');
+
+                // Show success message
+                successMessage.classList.remove('hidden');
+
+                // Hide success message after a few seconds (you can adjust the delay)
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 3000);
+            }, 2000); // Simulated 2-second processing time
+        });
+    </script>
 </body>
 </html>
