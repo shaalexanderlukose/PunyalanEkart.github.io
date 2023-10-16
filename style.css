@@ -18,6 +18,27 @@ header {
     color: #fff;
     text-align: center;
     padding: 20px;
+    position: relative; /* Needed for positioning the support icon */
+}
+
+/* Navigation links, search bar, etc. can be styled here */
+
+/* Floating customer support icon */
+.customer-support-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #0073e6;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Main content styles */
