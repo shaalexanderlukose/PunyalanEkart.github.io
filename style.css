@@ -23,11 +23,14 @@ header {
 /* Navigation styles */
 nav ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 10px 0;
 }
 
 nav a {
@@ -38,6 +41,7 @@ nav a {
 /* Search bar styles */
 form {
     margin-top: 20px;
+    text-align: center;
 }
 
 input[type="text"] {
