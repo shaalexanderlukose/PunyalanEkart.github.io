@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punyalan Ekart</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Instagram-like Website</title>
+  <!-- Include CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Punyalan Ekart</h1>
-        <!-- Add navigation links, search bar, etc. -->
-    </header>
-    
-    <main>
-        <div class="product">
-            <img src="products/product3.jpg" alt="Punyalan Agarbathis">
-            <h2>Kattadi TMT Kambikal</h2>
-            <p>Kattadi Tmt Steel Bars ഇത് കാറ്റത്ത് ആടില്ല, Very Very Strong</p>
-            <p>Price: ₹60/ kg</p>
-            <button>Add to Cart</button>
-        </div>
+  <header>
+    <!-- Navigation, user profile, etc. -->
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Profile</li>
+        <!-- Add more navigation items -->
+      </ul>
+    </nav>
+  </header>
 
-        <div class="product">
-            <img src="products/product1.jpg" alt="Punyalan Agarbathis">
-            <h2>Punyalan Agarbathis</h2>
-            <p>Discover Blissful Scents: Enjoy Our Best Fragrance-Smelling Agarbathi at a Whopping 70% Discount on Punyalan Ekart 🌸✨</p>
-            <p>Price: ₹60</p>
-            <button>Add to Cart</button>
-        </div>
+  <main>
+    <!-- Create a section for posting images -->
+    <section class="post-section">
+      <h2>Create a Post</h2>
+      <input type="file" accept="image/*" id="fileInput">
+      <button onclick="uploadImage()">Upload</button>
+    </section>
 
-        <div class="product">
-        <img src="products/product2.jpg" alt="Punyalan Healthy Drink">
-        <h2>Punyalan Healthy Drink</h2>
-        <p>Pure Hydration: Your Path to Healthier Living – Discover Our Premium Range of Healthy Drinking Water Options on Punyalan Ekart</p>
-        <p>Price: ₹15</p>
-        <button>Add to Cart</button>
-        </div>
+    <!-- Display uploaded images -->
+    <section class="feed">
+      <h2>Feed</h2>
+      <div id="imageFeed"></div>
+    </section>
+  </main>
 
-        <!-- Add more products in a similar format -->
-    </main>
-    
-    <footer>
-        &copy; 2023 Punyalan Private Limited
-    </footer>
+  <!-- Include JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
