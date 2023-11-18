@@ -8,63 +8,42 @@ body {
   padding: 0;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-
 header {
   background-color: #fafafa;
   border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-right: 20px;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-main {
-  background-color: #f9f9f9;
   padding: 20px 0;
 }
 
-.stories {
+.profile-header {
   display: flex;
-  /* Style your stories section */
+  align-items: center;
+  padding: 0 20px;
 }
 
-.story {
-  text-align: center;
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-right: 20px;
 }
 
-.story img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
+.profile-info h1 {
+  margin: 0;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+main {
+  padding: 20px;
 }
 
 .posts {
-  /* Style your posts section */
-}
-
-.post {
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
 }
 
 .post img {
