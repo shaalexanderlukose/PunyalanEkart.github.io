@@ -2,38 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram-like Website</title>
-  <!-- Include CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <!-- Navigation, user profile, etc. -->
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>Profile</li>
-        <!-- Add more navigation items -->
-      </ul>
-    </nav>
+    <!-- Instagram header -->
+    <div class="container">
+      <div class="logo">Instagram</div>
+      <input type="text" placeholder="Search">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Explore</a></li>
+          <!-- Add more navigation items -->
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <!-- Create a section for posting images -->
-    <section class="post-section">
-      <h2>Create a Post</h2>
-      <input type="file" accept="image/*" id="fileInput">
-      <button onclick="uploadImage()">Upload</button>
-    </section>
+    <!-- Posts and stories section -->
+    <div class="container">
+      <section class="stories">
+        <!-- Stories here -->
+        <!-- Sample: -->
+        <div class="story">
+          <img src="sample_story.jpg" alt="User Story">
+          <span>User</span>
+        </div>
+        <!-- More stories -->
+      </section>
 
-    <!-- Display uploaded images -->
-    <section class="feed">
-      <h2>Feed</h2>
-      <div id="imageFeed"></div>
-    </section>
+      <section class="posts">
+        <!-- Posts here -->
+        <!-- Sample: -->
+        <div class="post">
+          <img src="sample_post.jpg" alt="Post Image">
+          <!-- Post content -->
+          <!-- Likes, comments, etc. -->
+        </div>
+        <!-- More posts -->
+      </section>
+    </div>
   </main>
 
-  <!-- Include JavaScript -->
-  <script src="script.js"></script>
+  <footer>
+    <!-- Footer content -->
+    <!-- Add links, information, etc. -->
+  </footer>
 </body>
 </html>
