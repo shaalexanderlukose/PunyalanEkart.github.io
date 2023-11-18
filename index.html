@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Music Player</title>
+  <title>Media Player</title>
   <style>
     /* Style for the page */
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 50px;
+    }
+    #dropArea {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
     }
     input[type="file"] {
       display: none;
@@ -21,22 +27,88 @@
       cursor: pointer;
       font-size: 1.2em;
     }
+    #videoPlayer,
+    #audioPlayer {
+      display: none;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
-  <h1>Upload and Play Music</h1>
-  <input type="file" id="musicFile" accept=".mp3">
-  <label for="musicFile" class="upload-btn">Upload Music</label>
-  <audio controls id="audioPlayer" style="display:none;"></audio>
+  <h1>Upload or Drag and Drop Media</h1>
+  <div id="dropArea">
+    <p>Drag and drop files here or click to upload</p>
+  </div>
+  <input type="file" id="mediaFile" accept=".mp3, .mp4">
+  <label for="mediaFile" class="upload-btn">Upload Media</label>
+  <video controls id="videoPlayer"></video>
+  <audio controls id="audioPlayer"></audio>
 
   <script>
-    document.getElementById('musicFile').addEventListener('change', function(event) {
-      const file = event.target.files[0];
-      const audioPlayer = document.getElementById('audioPlayer');
-      audioPlayer.src = URL.createObjectURL(file);
-      audioPlayer.style.display = 'block';
-      audioPlayer.play();
+    const dropArea = document.getElementById('dropArea');
+
+    // Prevent default behavior to enable drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, preventDefaults, false);
     });
+
+    // Highlight drop area when dragging files
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropArea.addEventListener(eventName, highlight, false);
+    });
+
+    // Remove highlight when leaving drop area
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, unhighlight, false);
+    });
+
+    // Handle dropped files
+    dropArea.addEventListener('drop', handleDrop, false);
+
+    function preventDefaults(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    function highlight() {
+      dropArea.style.background = '#f0f0f0';
+    }
+
+    function unhighlight() {
+      dropArea.style.background = '#fff';
+    }
+
+    function handleDrop(event) {
+      const dt = event.dataTransfer;
+      const files = dt.files;
+
+      handleFiles(files);
+    }
+
+    document.getElementById('mediaFile').addEventListener('change', function(event) {
+      const files = event.target.files;
+      handleFiles(files);
+    });
+
+    function handleFiles(files) {
+      for (const file of files) {
+        const fileType = file.type.split('/')[0]; // Check if uploaded file is audio or video
+
+        if (fileType === 'audio') {
+          const audioPlayer = document.getElementById('audioPlayer');
+          audioPlayer.src = URL.createObjectURL(file);
+          audioPlayer.style.display = 'block';
+          audioPlayer.play();
+          document.getElementById('videoPlayer').style.display = 'none';
+        } else if (fileType === 'video') {
+          const videoPlayer = document.getElementById('videoPlayer');
+          videoPlayer.src = URL.createObjectURL(file);
+          videoPlayer.style.display = 'block';
+          videoPlayer.play();
+          document.getElementById('audioPlayer').style.display = 'none';
+        }
+      }
+    }
   </script>
 </body>
 </html>
