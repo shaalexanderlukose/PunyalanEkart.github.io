@@ -4,12 +4,26 @@
 
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20px;
 }
 
 nav ul {
@@ -21,18 +35,41 @@ nav ul {
 nav ul li {
   display: inline;
   margin-right: 20px;
-  cursor: pointer;
 }
 
 main {
-  padding: 20px;
+  background-color: #f9f9f9;
+  padding: 20px 0;
 }
 
-.post-section {
+.stories {
+  display: flex;
+  /* Style your stories section */
+}
+
+.story {
+  text-align: center;
+  margin-right: 20px;
+}
+
+.story img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.posts {
+  /* Style your posts section */
+}
+
+.post {
   margin-bottom: 20px;
 }
 
-.feed {
-  border: 1px solid #ccc;
-  padding: 10px;
+.post img {
+  width: 100%;
+  /* Adjust size as needed */
 }
+
+/* Add more styles as necessary for your website */
