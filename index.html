@@ -1,39 +1,42 @@
-<!-- section1.html / section2.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Section Title</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Music Player</title>
+  <style>
+    /* Style for the page */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    label.upload-btn {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Your Website Name</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="section1.html">Section 1</a></li>
-          <li><a href="section2.html">Section 2</a></li>
-          <!-- Add more navigation links as needed -->
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <h1>Upload and Play Music</h1>
+  <input type="file" id="musicFile" accept=".mp3">
+  <label for="musicFile" class="upload-btn">Upload Music</label>
+  <audio controls id="audioPlayer" style="display:none;"></audio>
 
-  <main>
-    <div class="container">
-      <!-- Rest of your content sections -->
-      <!-- ... -->
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <!-- Footer content for this section -->
-      <!-- ... -->
-    </div>
-  </footer>
+  <script>
+    document.getElementById('musicFile').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      const audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.src = URL.createObjectURL(file);
+      audioPlayer.style.display = 'block';
+      audioPlayer.play();
+    });
+  </script>
 </body>
 </html>
