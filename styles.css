@@ -4,13 +4,21 @@ body, h1, p, ul {
     padding: 0;
 }
 
+/* Set Instagram-like colors */
+:root {
+    --instagram-primary: #405DE6; /* Instagram Blue */
+    --instagram-secondary: #5851DB; /* Instagram Purple */
+    --instagram-text: #262626; /* Instagram Text Color */
+    --instagram-white: #ffffff; /* Instagram White Color */
+}
+
 /* Basic styling for the profile header */
 .profile-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #fff; /* Change the background color as needed */
+    background-color: var(--instagram-white);
     border-bottom: 1px solid #ccc; /* Separator line */
 }
 
@@ -29,14 +37,15 @@ body, h1, p, ul {
 .profile-details h1 {
     font-size: 1.2em;
     margin-bottom: 5px;
+    color: var(--instagram-text);
 }
 
 .profile-details button {
     padding: 8px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--instagram-primary);
     border-radius: 5px;
-    background-color: #3897f0; /* Follow button background color */
-    color: #fff;
+    background-color: var(--instagram-primary);
+    color: var(--instagram-white);
     font-weight: bold;
     cursor: pointer;
 }
@@ -47,4 +56,18 @@ body, h1, p, ul {
 }
 
 /* Other styles for the main content, footer, etc. */
-/* You can add more styles for posts, footer, etc. */
+main {
+    padding: 20px;
+}
+
+.posts {
+    /* Styles for posts */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--instagram-white);
+    color: var(--instagram-text);
+    font-size: 0.8em;
+}
