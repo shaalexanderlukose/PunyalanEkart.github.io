@@ -1,28 +1,50 @@
 /* Reset some default browser styles */
-body, h1, h2, p, ul {
+body, h1, p, ul {
     margin: 0;
     padding: 0;
 }
 
-/* Basic styling for profile information */
+/* Basic styling for the profile header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff; /* Change the background color as needed */
+    border-bottom: 1px solid #ccc; /* Separator line */
+}
+
 .profile-info {
-    /* Styles for profile picture, bio, follow button, etc. */
+    display: flex;
+    align-items: center;
 }
 
-/* Styles for individual posts */
-.posts {
-    /* Grid or flex layout for arranging posts */
+.profile-info img {
+    width: 50px; /* Adjust as per your profile picture */
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-.post {
-    /* Styles for each post (image, caption, comments, etc.) */
+.profile-details h1 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
 }
 
-/* Other styles for header, footer, navigation, etc. */
-header {
-    /* Styles for header */
+.profile-details button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #3897f0; /* Follow button background color */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-footer {
-    /* Styles for footer */
+/* Additional Navigation styling */
+.additional-nav {
+    /* Additional styles for navigation if needed */
 }
+
+/* Other styles for the main content, footer, etc. */
+/* You can add more styles for posts, footer, etc. */
