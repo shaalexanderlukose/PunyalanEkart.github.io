@@ -1,73 +1,28 @@
-/* Reset default browser styles */
-body,
-h1,
-p {
-  margin: 0;
-  padding: 0;
+/* Reset some default browser styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
 }
 
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+/* Basic styling for profile information */
+.profile-info {
+    /* Styles for profile picture, bio, follow button, etc. */
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
+/* Styles for individual posts */
+.posts {
+    /* Grid or flex layout for arranging posts */
 }
 
-/* Header styles */
+.post {
+    /* Styles for each post (image, caption, comments, etc.) */
+}
+
+/* Other styles for header, footer, navigation, etc. */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+    /* Styles for header */
 }
 
-/* Form styles */
-form {
-  margin: 20px 0;
+footer {
+    /* Styles for footer */
 }
-
-input[type="text"],
-input[type="password"],
-input[type="file"],
-button {
-  margin: 5px 0;
-  padding: 8px;
-  width: 100%;
-}
-
-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-/* Table styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-/* Other custom styles */
-/* Add your specific styles for different sections or elements of your web pages */
