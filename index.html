@@ -2,24 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tile Design Demo</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>File Upload</title>
 </head>
 <body>
   <div class="container">
-    <div class="tile">
+    <div class="tile" id="tile1">
       <h2>Tile 1</h2>
       <p>Description for Tile 1</p>
     </div>
-    <div class="tile">
-      <h2>Tile 2</h2>
-      <p>Description for Tile 2</p>
-    </div>
-    <div class="tile">
-      <h2>Tile 3</h2>
-      <p>Description for Tile 3</p>
-    </div>
-    <!-- Add more tiles as needed -->
   </div>
+
+  <script>
+    document.getElementById('tile1').addEventListener('click', () => {
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*'; // Change to desired file types
+
+      fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/upload', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('File uploaded successfully!');
+          } else {
+            throw new Error('File upload failed.');
+          }
+        })
+        .catch(error => {
+          console.error('Error uploading file:', error);
+        });
+      });
+
+      fileInput.click();
+    });
+  </script>
 </body>
 </html>
